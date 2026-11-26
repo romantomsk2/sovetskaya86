@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Советская 86 аренда</title>
+<meta name="description" content="Аренда помещения 103 м² в Томске: Советская, 86. Первый этаж, первая линия, два входа с улицы Пирогова. От собственника.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: graphite hero with a drawn facade, then numbered arguments, plan, tenants, location, terms, FAQ, closing call. Single light theme by choice. */
+:root{
+  color-scheme:light;
+  --ink:#14181b; --ink-2:#232a2f; --paper:#f6f5f2; --card:#ffffff; --text:#1b2024; --muted:#646c72; --line:#dcdad4;
+  --brick:#b8442c; --brick-dark:#8f3220; --brick-soft:#f5e3dd; --free:#dff0ea; --free-line:#1d7a63; --win:#2f7fd1;
+  --display:"Unbounded","Arial Black",sans-serif; --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0}
+body{background:var(--paper);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6}
+img,svg{max-width:100%}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(26px,4.2vw,38px)}
+h3{font-size:17px;font-weight:500;letter-spacing:0}
+p{margin:0}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--brick)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:10px;font-weight:600;text-decoration:none;font-size:16px;border:1px solid transparent}
+.btn-main{background:var(--brick);color:#fff}
+.btn-main:hover{background:var(--brick-dark)}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{border-color:#fff}
+.btn:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--win);outline-offset:3px}
+
+.top{position:sticky;top:0;z-index:5;background:rgba(20,24,27,.94);backdrop-filter:blur(6px);color:#fff}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px}
+.brand{font-family:var(--display);font-weight:700;font-size:15px}
+.brand span{color:#9aa3a9;font-family:var(--body);font-weight:400;margin-left:10px}
+.top .btn{padding:9px 16px;font-size:14px}
+
+.hero{background:var(--ink);color:#fff;padding:56px 0 0}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+.hero .eyebrow{color:#e58e78}
+.hero h1{font-size:clamp(34px,6.2vw,62px);margin-top:14px}
+.hero h1 em{font-style:normal;color:#e58e78}
+.lead{font-size:19px;color:#c3cace;margin-top:18px;max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.facade{background:var(--ink-2);border-radius:16px;padding:18px}
+.facade text{font-family:var(--body)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border-top:1px solid #333c42}
+.facts div{padding:22px 18px 26px;border-right:1px solid #333c42}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-family:var(--display);font-size:clamp(20px,3vw,30px);font-weight:700;font-variant-numeric:tabular-nums}
+.facts span{color:#9aa3a9;font-size:14px}
+
+section{padding:72px 0}
+.head{display:flex;flex-direction:column;gap:12px;margin-bottom:34px;max-width:46em}
+.head p{color:var(--muted);font-size:18px}
+
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.why article{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.why b{font-family:var(--display);font-size:30px;color:var(--brick);line-height:1;font-variant-numeric:tabular-nums}
+.why p{font-size:15px;color:var(--muted)}
+.src{font-size:13px;color:var(--muted);margin-top:14px}
+
+.pano{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pano figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.pano iframe{width:100%;height:340px;border:0;display:block;background:#e9e7e1}
+.pano figcaption{padding:14px 18px;font-size:15px}
+.pano figcaption b{display:block;font-family:var(--display);font-weight:500;font-size:15px;margin-bottom:2px}
+.pano figcaption span{color:var(--muted)}
+.plan-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:start}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;overflow-x:auto}
+.plan svg{display:block;min-width:560px;width:100%;height:auto}
+.plan text{font-family:var(--body);fill:var(--text);font-size:13px}
+.free{fill:var(--free);stroke:var(--free-line)}
+.busy{fill:var(--brick-soft);stroke:var(--brick)}
+.annex{fill:#e9e7e1;stroke:#8a8f93}
+.win{stroke:var(--win);stroke-width:5}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px;font-size:14px;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:6px;vertical-align:-2px;border:1px solid}
+.legend .f{background:var(--free);border-color:var(--free-line)}
+.legend .b{background:var(--brick-soft);border-color:var(--brick)}
+.legend .a{background:#e9e7e1;border-color:#8a8f93}
+.legend .w{height:4px;border:0;background:var(--win);vertical-align:3px}
+.options{display:flex;flex-direction:column;gap:14px}
+.option{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.option.main{border-color:var(--brick);box-shadow:inset 4px 0 0 var(--brick)}
+.option p{color:var(--muted);font-size:15px;margin-top:6px}
+
+.dark{background:var(--ink);color:#fff}
+.dark .head p{color:#b4bcc1}
+.who{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.who article{background:var(--ink-2);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.who p{color:#b4bcc1;font-size:15px}
+.who h3{color:#fff}
+
+.loc{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:stretch}
+.loc ul{margin:18px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.loc li{padding-left:22px;position:relative}
+.loc li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--brick)}
+.map{border-radius:14px;overflow:hidden;border:1px solid var(--line);min-height:340px;background:#e9e7e1}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+.links{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-weight:600}
+.links a{color:var(--brick)}
+
+.terms{display:grid;grid-template-columns:1fr 1.2fr;gap:28px}
+.price{background:var(--brick);color:#fff;border-radius:16px;padding:30px;display:flex;flex-direction:column;gap:10px}
+.price b{font-family:var(--display);font-size:clamp(30px,5vw,44px);line-height:1.05;font-variant-numeric:tabular-nums}
+.price small{font-size:15px;opacity:.9}
+.price ul{margin:10px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:16px}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;counter-reset:s}
+.steps li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 18px 62px;position:relative;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:18px;top:18px;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;font-family:var(--display);font-size:13px;display:grid;place-items:center}
+.steps p{color:var(--muted);font-size:15px}
+
+.faq{max-width:760px;display:flex;flex-direction:column;gap:10px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 20px}
+summary{cursor:pointer;font-weight:600;padding:18px 0;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--display);color:var(--brick)}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 18px;color:var(--muted)}
+
+.final{background:var(--ink);color:#fff;text-align:left}
+.final .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.final p{color:#b4bcc1;margin-top:10px;max-width:34em}
+footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
+
+@media (max-width:860px){
+  .hero-grid,.plan-grid,.loc,.terms,.pano{grid-template-columns:1fr}
+  .why{grid-template-columns:1fr 1fr}
+  .who{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div:nth-child(2){border-right:0}
+  .facts div:nth-child(-n+2){border-bottom:1px solid #333c42}
+  section{padding:52px 0}
+  .brand span{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <div class="brand">Советская, 86<span>аренда 103 м², Томск</span></div>
+    <a class="btn btn-main" href="https://t.me/sovetskaya_86_bot">Записаться на показ</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Томск · первая линия · от собственника</div>
+        <h1>103 м² с двумя входами <em>на Пирогова</em></h1>
+        <p class="lead">Первый этаж жилого дома на углу Советской и Пирогова. Кабинетная планировка, окна на улицу, место под вывеску на фасаде. Подходит под клинику, аптеку, магазин или офис с приёмом клиентов.</p>
+        <div class="cta">
+          <a class="btn btn-main" href="https://t.me/sovetskaya_86_bot">Записаться на показ</a>
+          <a class="btn btn-ghost" href="#plan">Смотреть планировку</a>
+        </div>
+      </div>
+      <div class="facade" aria-hidden="true">
+        <svg viewBox="0 0 480 300" role="img">
+          <rect x="150" y="10" width="200" height="170" fill="#9c4a36"/>
+          <rect x="150" y="10" width="200" height="170" fill="none" stroke="#7b3524"/>
+          <g fill="#d9e3ea">
+            <rect x="170" y="26" width="34" height="26"/><rect x="233" y="26" width="34" height="26"/><rect x="296" y="26" width="34" height="26"/>
+            <rect x="170" y="70" width="34" height="26"/><rect x="233" y="70" width="34" height="26"/><rect x="296" y="70" width="34" height="26"/>
+            <rect x="170" y="114" width="34" height="26"/><rect x="233" y="114" width="34" height="26"/><rect x="296" y="114" width="34" height="26"/>
+          </g>
+          <rect x="30" y="180" width="420" height="78" fill="#ecebe6"/>
+          <rect x="30" y="180" width="420" height="16" fill="#3a4349"/>
+          <text x="240" y="192" text-anchor="middle" font-size="10" font-weight="600" fill="#ffffff" letter-spacing="2">ВАША ВЫВЕСКА</text>
+          <g fill="#bcd3e6" stroke="#6f7b84">
+            <rect x="52" y="208" width="44" height="34"/>
+            <rect x="182" y="208" width="40" height="34"/><rect x="238" y="208" width="40" height="34"/><rect x="294" y="208" width="62" height="34"/>
+          </g>
+          <rect x="122" y="204" width="30" height="54" fill="#5b3a2c"/>
+          <polygon points="100,258 160,258 160,246 116,246" fill="#8b8f8a"/>
+          <rect x="386" y="196" width="64" height="62" fill="#d6d4cd" stroke="#6f7b84"/>
+          <rect x="406" y="214" width="24" height="44" fill="#5b3a2c"/>
+          <rect x="0" y="258" width="480" height="6" fill="#4b545a"/>
+          <text x="137" y="284" text-anchor="middle" font-size="12" fill="#c3cace">Вход 1</text>
+          <text x="418" y="284" text-anchor="middle" font-size="12" fill="#c3cace">Вход 2</text>
+          <text x="268" y="284" text-anchor="middle" font-size="12" fill="#c3cace">окна на улицу Пирогова</text>
+        </svg>
+      </div>
+    </div>
+    <div class="facts">
+      <div><b>103 м²</b><span>по плану БТИ</span></div>
+      <div><b>1 этаж</b><span>первая линия</span></div>
+      <div><b>2 входа</b><span>отдельные, с улицы</span></div>
+      <div><b>110 000 ₽</b><span>в месяц за всё помещение</span></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Почему это место работает</div>
+      <h2>Сюда уже ходят каждый день</h2>
+      <p>В доме и рядом работают заведения, за которыми жители района приходят регулярно. Вашему бизнесу не придётся приучать людей к адресу.</p>
+    </div>
+    <div class="why">
+      <article><b>625</b><h3>оценок у медцентра в этом доме</h3><p>Диагностический центр с рейтингом 4,9 принимает пациентов через стену от помещения.</p></article>
+      <article><b>2</b><h3>пункта выдачи заказов в доме</h3><p>За посылками сюда заходят жители всех соседних домов.</p></article>
+      <article><b>340 м</b><h3>до остановки «ТЭМЗ»</h3><p>Автобусы и троллейбусы, пешком около пяти минут.</p></article>
+      <article><b>30+</b><h3>лет коммерческой истории</h3><p>Здесь работали типография, офисы, продуктовый магазин и салон красоты.</p></article>
+    </div>
+    <p class="src">Рейтинг, число оценок и расстояние до остановки приведены по данным справочника 2ГИС на ноябрь 2026 года.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Как выглядит место</div>
+      <h2>Осмотритесь, не выезжая на показ</h2>
+      <p>Панорамы улицы Пирогова из Яндекс Карт. Их можно вращать и приближать, как на карте.</p>
+    </div>
+    <div class="pano">
+      <figure>
+        <iframe title="Панорама: фасад блока 63 м² и второй вход" loading="lazy" allowfullscreen src="https://yandex.ru/map-widget/v1/?ll=84.954436%2C56.461500&z=18&panorama%5Bpoint%5D=84.954436%2C56.461520&panorama%5Bdirection%5D=180%2C5&panorama%5Bspan%5D=110%2C60"></iframe>
+        <figcaption><b>Блок 63 м² и вход 2</b><span>Три окна кабинетов на улицу, слева пристройка со вторым входом у въезда во двор.</span></figcaption>
+      </figure>
+      <figure>
+        <iframe title="Панорама: фасад в сторону Советской и первый вход" loading="lazy" allowfullscreen src="https://yandex.ru/map-widget/v1/?ll=84.954380%2C56.461500&z=18&panorama%5Bpoint%5D=84.954436%2C56.461520&panorama%5Bdirection%5D=215%2C3&panorama%5Bspan%5D=110%2C60"></iframe>
+        <figcaption><b>Вход 1 и фасад к Советской</b><span>Крыльцо первого входа и линия фасада в сторону Советской улицы.</span></figcaption>
+      </figure>
+    </div>
+    <p class="src">Съёмка Яндекс Карт, сезон и вывески на панораме могут отличаться от сегодняшних.</p>
+  </div>
+</section>
+
+<section id="plan" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Планировка</div>
+      <h2>Одно помещение или два независимых блока</h2>
+      <p>У каждого блока свой вход с улицы и свой санузел. Между блоками есть проход, поэтому помещение работает и как единое.</p>
+    </div>
+    <div class="plan-grid">
+      <div class="plan">
+        <svg viewBox="0 0 646 300" role="img" aria-label="План помещения: слева блок 40 м² с первым входом, справа блок 63 м² с коридором, санузлом и вторым входом через пристройку">
+          <text x="323" y="20" text-anchor="middle">Улица Пирогова, фасад с окнами</text>
+          <rect class="busy" x="165" y="34" width="60" height="26" rx="4"/><text x="195" y="52" text-anchor="middle">Вход 1</text>
+          <rect class="busy" x="20" y="60" width="210" height="200" rx="4"/><text x="125" y="96" text-anchor="middle" font-weight="600">Блок 40 м²</text><text x="125" y="116" text-anchor="middle">зал</text>
+          <rect class="busy" x="20" y="150" width="130" height="110" rx="4"/><text x="85" y="210" text-anchor="middle">кабинет ≈15 м²</text>
+          <rect class="busy" x="170" y="215" width="60" height="45" rx="4"/><text x="200" y="242" text-anchor="middle">с/у</text>
+          <rect class="free" x="230" y="60" width="100" height="125" rx="4"/><text x="280" y="126" text-anchor="middle">≈11 м²</text>
+          <rect class="free" x="330" y="60" width="100" height="125" rx="4"/><text x="380" y="126" text-anchor="middle">≈11 м²</text>
+          <rect class="free" x="430" y="60" width="150" height="115" rx="4"/><text x="505" y="122" text-anchor="middle">≈16 м²</text>
+          <rect class="free" x="430" y="175" width="150" height="85" rx="4"/><text x="505" y="222" text-anchor="middle">≈11 м²</text>
+          <rect class="free" x="230" y="185" width="200" height="75" rx="4"/><text x="365" y="227" text-anchor="middle">коридор</text>
+          <rect class="free" x="230" y="215" width="62" height="45" rx="4"/><text x="261" y="242" text-anchor="middle">с/у</text>
+          <rect class="annex" x="580" y="60" width="46" height="140" rx="4"/><text x="603" y="134" text-anchor="middle">Вход 2</text>
+          <line class="win" x1="45" y1="60" x2="150" y2="60"/><line class="win" x1="250" y1="60" x2="310" y2="60"/><line class="win" x1="350" y1="60" x2="410" y2="60"/><line class="win" x1="455" y1="60" x2="555" y2="60"/><line class="win" x1="580" y1="212" x2="580" y2="250"/>
+          <text x="20" y="288">← к Советской</text><text x="626" y="288" text-anchor="end">въезд во двор →</text>
+        </svg>
+        <div class="legend"><span><i class="f"></i>Блок 63 м²</span><span><i class="b"></i>Блок 40 м²</span><span><i class="a"></i>Пристройка у входа 2</span><span><i class="w"></i>Окно</span></div>
+      </div>
+      <div class="options">
+        <div class="option main"><h3>Всё помещение, 103 м²</h3><p>Семь помещений: зал, пять кабинетов и коридор, два санузла, два входа. Лучшие условия получает арендатор, который берёт всё и надолго.</p></div>
+        <div class="option"><h3>Блок 63 м²</h3><p>Четыре кабинета с окнами, коридор, санузел. Вход через пристройку: она не отапливается и в 103 м² не входит, подходит под тамбур или витрину.</p></div>
+        <div class="option"><h3>Блок 40 м²</h3><p>Зал с окном на улицу, кабинет около 15 м², санузел, крыльцо со ступенями.</p></div>
+        <p class="src" style="margin-top:0">Схема составлена по эскизу собственника, площади комнат приблизительные. Точные цифры есть в техпаспорте.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow" style="color:#e58e78">Кому подойдёт</div>
+      <h2>Планировка уже готова под приём клиентов</h2>
+      <p>Кабинеты с окнами, отдельные входы и два санузла снимают самые дорогие пункты перепланировки.</p>
+    </div>
+    <div class="who">
+      <article><h3>Стоматология, клиника, лаборатория</h3><p>Кабинеты вдоль фасада, коридор-ожидание, отдельный вход для пациентов. Жители района уже ходят в этот дом за медицинскими услугами.</p></article>
+      <article><h3>Аптека и оптика</h3><p>Соседство с диагностическим центром даёт готовый поток: рецепт и направление выписывают за стеной.</p></article>
+      <article><h3>Магазин у дома, пекарня, зоотовары</h3><p>Продуктовый магазин работал здесь много лет. Вокруг плотная жилая застройка, вход прямо с тротуара.</p></article>
+      <article><h3>Услуги и офис с приёмом</h3><p>Копицентр, детский центр, студия, офис продаж. Два входа позволяют развести клиентов и персонал.</p></article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="loc">
+      <div>
+        <div class="eyebrow">Расположение</div>
+        <h2 style="margin-top:12px">Угол Советской и Пирогова</h2>
+        <ul>
+          <li>Томск, Кировский район, улица Советская, 86. Вход с улицы Пирогова.</li>
+          <li>В этом же доме диагностический центр и два пункта выдачи заказов.</li>
+          <li>В соседнем доме продуктовый супермаркет.</li>
+          <li>Остановка «ТЭМЗ» в 340 метрах.</li>
+        </ul>
+        <div class="links">
+          <a href="https://yandex.ru/maps/?ll=84.954436%2C56.461304&z=18&pt=84.954436%2C56.461304">Открыть в Яндекс Картах</a>
+          <a href="https://2gis.ru/tomsk/geo/422848120226801">Открыть в 2ГИС</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Карта: Томск, Советская, 86" loading="lazy" src="https://yandex.ru/map-widget/v1/?ll=84.954436%2C56.461304&z=17&pt=84.954436%2C56.461304%2Cpm2rdm"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Условия</div>
+      <h2>Прямая аренда, без посредников</h2>
+    </div>
+    <div class="terms">
+      <div class="price">
+        <small>Всё помещение, 103 м²</small>
+        <b>110 000 ₽ в месяц</b>
+        <small>около 1 070 ₽ за м², коммунальные платежи отдельно</small>
+        <ul>
+          <li>Долгосрочный договор</li>
+          <li>Без комиссии, сдаёт собственник</li>
+          <li>Каникулы на время ремонта обсуждаются</li>
+          <li>Отдельные блоки: цена по запросу</li>
+        </ul>
+      </div>
+      <ol class="steps">
+        <li><h3>Вопросы и заявка</h3><p>Бот в Telegram отвечает на типовые вопросы и передаёт вашу заявку собственнику.</p></li>
+        <li><h3>Показ</h3><p>Согласуем удобное время и покажем оба блока и пристройку.</p></li>
+        <li><h3>Условия</h3><p>Срок, каникулы на ремонт и вывеску обсуждаем напрямую с собственником.</p></li>
+        <li><h3>Договор</h3><p>Подписываем договор аренды и передаём помещение по акту.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Частые вопросы</div>
+      <h2>Коротко о главном</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>Когда помещение свободно?</summary><p>Блок 63 м² свободен. Блок 40 м² сейчас занят арендатором; срок передачи всех 103 м² согласуем, ориентир один-два месяца.</p></details>
+      <details><summary>Можно ли арендовать только часть?</summary><p>Да. У блоков отдельные входы и санузлы, их можно сдать по отдельности. Приоритет у арендатора на всё помещение.</p></details>
+      <details><summary>Есть ли комиссия?</summary><p>Нет. Помещение сдаёт собственник, договор заключается напрямую.</p></details>
+      <details><summary>Можно ли разместить вывеску?</summary><p>Да, на фасаде над окнами есть место под вывеску.</p></details>
+      <details><summary>Что с фотографиями и техническими данными?</summary><p>Фото и видеообзор помещения, высоту потолков и электрическую мощность пришлём по запросу.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <div>
+      <h2>Посмотрите помещение вживую</h2>
+      <p>Оставьте номер боту в Telegram. Собственник свяжется с вами и согласует время показа.</p>
+    </div>
+    <a class="btn btn-main" href="https://t.me/sovetskaya_86_bot">Записаться на показ в Telegram</a>
+  </div>
+</section>
+<footer><div class="wrap">Советская, 86, Томск. Аренда от собственника.</div></footer>
+
+</body>
+</html>
