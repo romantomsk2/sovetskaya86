@@ -67,7 +67,7 @@ section{padding:72px 0}
 .why p{font-size:15px;color:var(--muted)}
 .src{font-size:13px;color:var(--muted);margin-top:14px}
 
-.pano{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pano{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .pano figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .pano iframe{width:100%;height:340px;border:0;display:block;background:#e9e7e1}
 .pano figcaption{padding:14px 18px;font-size:15px}
@@ -79,9 +79,9 @@ section{padding:72px 0}
 .pano .mark{position:absolute;inset:0;border:0;padding:0;margin:0;background:transparent;cursor:pointer;font:inherit;text-align:left}
 .pano .mark i{position:absolute;border:3px solid #ffd23f;border-radius:6px;box-shadow:0 0 0 2px rgba(0,0,0,.45),inset 0 0 0 1px rgba(0,0,0,.35);background:rgba(255,210,63,.07)}
 .pano .mark i.other{border:3px dashed #e8edf0;background:rgba(20,24,27,.45)}
-.pano .mark b{position:absolute;transform:translate(-50%,0);background:#ffd23f;color:#14181b;font-family:var(--body);font-weight:700;font-size:13px;line-height:1.25;padding:4px 9px;border-radius:6px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+.pano .mark b{position:absolute;transform:translate(-50%,0);background:#ffd23f;color:#14181b;font-family:var(--body);font-weight:700;font-size:12px;line-height:1.25;padding:4px 9px;border-radius:6px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.4)}
 .pano .mark b.other{background:#14181b;color:#fff}
-.pano .mark span{position:absolute;left:50%;top:12px;transform:translateX(-50%);background:rgba(20,24,27,.88);color:#fff;font-size:13px;font-weight:600;padding:7px 14px;border-radius:20px;white-space:nowrap}
+.pano .mark span{position:absolute;left:50%;top:10px;font-size:12px !important;transform:translateX(-50%);background:rgba(20,24,27,.88);color:#fff;font-size:13px;font-weight:600;padding:7px 14px;border-radius:20px;white-space:nowrap}
 .pano .view.live .mark{display:none}
 .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:22px}
 .nums div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
@@ -270,31 +270,42 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
     <div class="head">
       <div class="eyebrow">Как выглядит место</div>
       <h2>Осмотритесь, не выезжая на показ</h2>
-      <p>На панорамах улицы Пирогова отмечено, что именно сдаётся и где проходит граница с соседями. После нажатия панораму можно вращать и приближать.</p>
+      <p>Три точки на улице Пирогова, слева направо вдоль фасада. Жёлтым обведено всё, что сдаётся, пунктиром показаны соседи. После нажатия панораму можно вращать и приближать.</p>
     </div>
     <div class="pano">
       <figure>
         <div class="view">
-          <iframe title="Панорама: фасад блока 63 м² и второй вход" loading="lazy" allowfullscreen src="https://yandex.ru/map-widget/v1/?ll=84.954436%2C56.461500&z=18&panorama%5Bpoint%5D=84.954436%2C56.461520&panorama%5Bdirection%5D=180%2C5&panorama%5Bspan%5D=110%2C60"></iframe>
+          <iframe title="Панорама: вход 2 и окна кабинетов" loading="lazy" allowfullscreen src="https://yandex.ru/map-widget/v1/?ll=84.954436%2C56.461520&z=18&panorama%5Bpoint%5D=84.954436%2C56.461520&panorama%5Bdirection%5D=180%2C5&panorama%5Bspan%5D=110%2C60"></iframe>
           <button class="mark" type="button" aria-label="Убрать разметку и вращать панораму">
             <i style="left:26.5%;top:45%;width:7.5%;height:27%"></i><b style="left:22%;top:31%">Вход 2</b>
-            <i style="left:39%;top:42.5%;width:61%;height:23%"></i><b style="left:66%;top:68%">Окна кабинетов, блок 63 м²</b>
-            <span>Нажмите, чтобы вращать панораму</span>
+            <i style="left:39%;top:42.5%;width:61%;height:23%"></i><b style="left:68%;top:68%">Три окна кабинетов</b>
+            <span>Нажмите, чтобы вращать</span>
           </button>
         </div>
-        <figcaption><b>Блок 63 м² и вход 2</b><span>Жёлтым обведено то, что сдаётся: окна кабинетов на первом этаже и пристройка со вторым входом у въезда во двор.</span></figcaption>
+        <figcaption><b>1. Вход 2 и блок 63 м²</b><span>Левый край помещения: пристройка со вторым входом у въезда во двор и три окна кабинетов. Ещё одно окно выходит в торец, за пристройкой.</span></figcaption>
       </figure>
       <figure>
         <div class="view">
-          <iframe title="Панорама: фасад в сторону Советской и первый вход" loading="lazy" allowfullscreen src="https://yandex.ru/map-widget/v1/?ll=84.954380%2C56.461500&z=18&panorama%5Bpoint%5D=84.954436%2C56.461520&panorama%5Bdirection%5D=215%2C3&panorama%5Bspan%5D=110%2C60"></iframe>
+          <iframe title="Панорама: весь фасад помещения" loading="lazy" allowfullscreen src="https://yandex.ru/map-widget/v1/?ll=84.954436%2C56.461520&z=18&panorama%5Bpoint%5D=84.954436%2C56.461520&panorama%5Bdirection%5D=215%2C3&panorama%5Bspan%5D=110%2C60"></iframe>
           <button class="mark" type="button" aria-label="Убрать разметку и вращать панораму">
-            <i style="left:0;top:37%;width:49%;height:26%"></i><b style="left:22%;top:65%">Ваш фасад</b>
-            <b style="left:55%;top:27%">Вход 1, за кустами</b>
-            <i class="other" style="left:62.5%;top:38.5%;width:25%;height:16%"></i><b class="other" style="left:75%;top:56.5%">Клиника, не входит</b>
-            <span>Нажмите, чтобы вращать панораму</span>
+            <i style="left:0;top:37%;width:38%;height:26%"></i><b style="left:19%;top:65%">Блок 63 м²: кабинеты</b>
+            <i style="left:40%;top:37%;width:22%;height:26%"></i><b style="left:51%;top:25%">Блок 40 м²: зал и вход 1</b>
+            <i class="other" style="left:63.5%;top:38.5%;width:24%;height:16%"></i><b class="other" style="left:76%;top:57%">Клиника</b>
+            <span>Нажмите, чтобы вращать</span>
           </button>
         </div>
-        <figcaption><b>Вход 1 и граница с соседями</b><span>Помещение заканчивается у крыльца первого входа. Белая одноэтажная часть правее относится к клинике.</span></figcaption>
+        <figcaption><b>2. Весь фасад: 103 м²</b><span>Оба блока идут подряд по одной стене: кабинеты, затем окно зала и крыльцо первого входа. Сейчас в блоке 40 м² работает салон. Клиника правее в аренду не входит.</span></figcaption>
+      </figure>
+      <figure>
+        <div class="view">
+          <iframe title="Панорама: крыльцо первого входа со стороны Советской" loading="lazy" allowfullscreen src="https://yandex.ru/map-widget/v1/?ll=84.954050%2C56.461520&z=18&panorama%5Bpoint%5D=84.954050%2C56.461520&panorama%5Bdirection%5D=125%2C3&panorama%5Bspan%5D=110%2C60"></iframe>
+          <button class="mark" type="button" aria-label="Убрать разметку и вращать панораму">
+            <i style="left:44%;top:36%;width:21%;height:23%"></i><b style="left:50%;top:24%">Вход 1: крыльцо и зал</b>
+            <i class="other" style="left:66.5%;top:35%;width:33.5%;height:22%"></i><b class="other" style="left:83%;top:59%">Клиника</b>
+            <span>Нажмите, чтобы вращать</span>
+          </button>
+        </div>
+        <figcaption><b>3. Вход 1 со стороны Советской</b><span>Правый край помещения: крыльцо со ступенями и окно зала. Так помещение видят те, кто идёт от Советской улицы.</span></figcaption>
       </figure>
     </div>
     <p class="src">Разметка нанесена поверх панорамы Яндекс Карт и показывает границы примерно. Сезон и вывески на съёмке могут отличаться от сегодняшних.</p>
