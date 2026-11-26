@@ -115,8 +115,11 @@ section{padding:72px 0}
 .chat small{color:#7f888e;font-size:12px}
 .plan-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:start}
 .plan{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;overflow-x:auto}
-.plan svg{display:block;min-width:560px;width:100%;height:auto}
+.plan svg{display:block;width:100%;height:auto}
 .plan text{font-family:var(--body);fill:var(--text);font-size:13px}
+.plan .outer{fill:none;stroke:var(--ink);stroke-width:3}
+.plan .door{stroke:#fff;stroke-width:6}
+.plan .doorl{font-size:11px;fill:var(--muted)}
 .free{fill:var(--free);stroke:var(--free-line)}
 .busy{fill:var(--brick-soft);stroke:var(--brick)}
 .annex{fill:#e9e7e1;stroke:#8a8f93}
@@ -245,7 +248,7 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
     <div class="facts">
       <div><b>103 м²</b><span>по плану БТИ</span></div>
       <div><b>1 этаж</b><span>первая линия</span></div>
-      <div><b>2 входа</b><span>отдельные, с улицы</span></div>
+      <div><b>2 входа</b><span>с улицы, в одно помещение</span></div>
       <div><b>110 000 ₽</b><span>в месяц за всё помещение</span></div>
     </div>
   </div>
@@ -285,19 +288,19 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
             <span>Нажмите, чтобы вращать</span>
           </button>
         </div>
-        <figcaption><b>1. Вход 2 и блок 63 м²</b><span>Левый край помещения: пристройка со вторым входом у въезда во двор и три окна кабинетов. Ещё одно окно выходит в торец, за пристройкой.</span></figcaption>
+        <figcaption><b>1. Вход 2 и кабинеты</b><span>Левый край помещения: пристройка со вторым входом у въезда во двор и три окна кабинетов. Ещё одно окно выходит в торец, за пристройкой.</span></figcaption>
       </figure>
       <figure>
         <div class="view">
           <iframe title="Панорама: весь фасад помещения" loading="lazy" allowfullscreen src="https://yandex.ru/map-widget/v1/?ll=84.954436%2C56.461520&z=18&panorama%5Bpoint%5D=84.954436%2C56.461520&panorama%5Bdirection%5D=215%2C3&panorama%5Bspan%5D=110%2C60"></iframe>
           <button class="mark" type="button" aria-label="Убрать разметку и вращать панораму">
-            <i style="left:0;top:37%;width:38%;height:26%"></i><b style="left:1%;top:65%;transform:none">Блок 63 м²: кабинеты</b>
-            <i style="left:40%;top:37%;width:22%;height:26%"></i><b style="left:51%;top:25%">Блок 40 м²: зал и вход 1</b>
+            <i style="left:0;top:37%;width:38%;height:26%"></i><b style="left:1%;top:65%;transform:none">Кабинеты</b>
+            <i style="left:40%;top:37%;width:22%;height:26%"></i><b style="left:51%;top:25%">Зал и вход 1</b>
             <i class="other" style="left:63.5%;top:38.5%;width:24%;height:16%"></i><b class="other" style="left:76%;top:57%">Клиника</b>
             <span>Нажмите, чтобы вращать</span>
           </button>
         </div>
-        <figcaption><b>2. Весь фасад: 103 м²</b><span>Оба блока идут подряд по одной стене: кабинеты, затем окно зала и крыльцо первого входа. Сейчас в блоке 40 м² работает салон. Клиника правее в аренду не входит.</span></figcaption>
+        <figcaption><b>2. Весь фасад: 103 м²</b><span>Помещение единое и тянется вдоль одной стены: кабинеты, затем окно зала и крыльцо первого входа. Клиника правее в аренду не входит.</span></figcaption>
       </figure>
       <figure>
         <div class="view">
@@ -328,15 +331,15 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
   <div class="wrap">
     <div class="head">
       <div class="eyebrow">Планировка</div>
-      <h2>Одно помещение или два независимых блока</h2>
-      <p>У каждого блока свой вход с улицы и свой санузел. Между блоками есть проход, поэтому помещение работает и как единое.</p>
+      <h2>Единое помещение 103 м² с двумя входами</h2>
+      <p>Это одно большое помещение на первом этаже: зал, пять кабинетов, коридор, два санузла и два входа с улицы. Сейчас оно используется как две части, соединённые дверью, поэтому на схеме они показаны разными цветами.</p>
     </div>
     <div class="plan-grid">
       <div class="plan">
-        <svg viewBox="0 0 646 300" role="img" aria-label="План помещения: слева блок 40 м² с первым входом, справа блок 63 м² с коридором, санузлом и вторым входом через пристройку">
+        <svg viewBox="0 0 646 300" role="img" aria-label="План единого помещения 103 м²: слева зал и кабинет с первым входом, справа четыре кабинета, коридор, санузел и второй вход через пристройку; части соединены дверью">
           <text x="323" y="20" text-anchor="middle">Улица Пирогова, фасад с окнами</text>
           <rect class="busy" x="165" y="34" width="60" height="26" rx="4"/><text x="195" y="52" text-anchor="middle">Вход 1</text>
-          <rect class="busy" x="20" y="60" width="210" height="200" rx="4"/><text x="125" y="96" text-anchor="middle" font-weight="600">Блок 40 м²</text><text x="125" y="116" text-anchor="middle">зал</text>
+          <rect class="busy" x="20" y="60" width="210" height="200" rx="4"/><text x="125" y="96" text-anchor="middle" font-weight="600">≈40 м²</text><text x="125" y="116" text-anchor="middle">зал</text>
           <rect class="busy" x="20" y="150" width="130" height="110" rx="4"/><text x="85" y="210" text-anchor="middle">кабинет ≈15 м²</text>
           <rect class="busy" x="170" y="215" width="60" height="45" rx="4"/><text x="200" y="242" text-anchor="middle">с/у</text>
           <rect class="free" x="230" y="60" width="100" height="125" rx="4"/><text x="280" y="126" text-anchor="middle">≈11 м²</text>
@@ -346,15 +349,16 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
           <rect class="free" x="230" y="185" width="200" height="75" rx="4"/><text x="365" y="227" text-anchor="middle">коридор</text>
           <rect class="free" x="230" y="215" width="62" height="45" rx="4"/><text x="261" y="242" text-anchor="middle">с/у</text>
           <rect class="annex" x="580" y="60" width="46" height="140" rx="4"/><text x="603" y="134" text-anchor="middle">Вход 2</text>
+          <path class="outer" d="M20 60 H580 V260 H20 Z"/><line class="door" x1="230" y1="189" x2="230" y2="213"/><text class="doorl" x="236" y="205">дверь</text>
           <line class="win" x1="45" y1="60" x2="150" y2="60"/><line class="win" x1="250" y1="60" x2="310" y2="60"/><line class="win" x1="350" y1="60" x2="410" y2="60"/><line class="win" x1="455" y1="60" x2="555" y2="60"/><line class="win" x1="580" y1="212" x2="580" y2="250"/>
           <text x="20" y="288">← к Советской</text><text x="626" y="288" text-anchor="end">въезд во двор →</text>
         </svg>
-        <div class="legend"><span><i class="f"></i>Блок 63 м²</span><span><i class="b"></i>Блок 40 м²</span><span><i class="a"></i>Пристройка у входа 2</span><span><i class="w"></i>Окно</span></div>
+        <div class="legend"><span><i class="f"></i>Часть 63 м², свободна</span><span><i class="b"></i>Часть 40 м², сейчас салон</span><span><i class="a"></i>Пристройка у входа 2</span><span><i class="w"></i>Окно</span></div>
       </div>
       <div class="options">
-        <div class="option main"><h3>Всё помещение, 103 м²</h3><p>Семь помещений: зал, пять кабинетов и коридор, два санузла, два входа. Приоритет у арендатора, который берёт всё помещение на долгий срок.</p></div>
-        <div class="option"><h3>Блок 63 м²</h3><p>Четыре кабинета с окнами, коридор, санузел. Вход через пристройку: она не отапливается и в 103 м² не входит, подходит под тамбур или витрину.</p></div>
-        <div class="option"><h3>Блок 40 м²</h3><p>Зал с окном на улицу, кабинет около 15 м², санузел, крыльцо со ступенями.</p></div>
+        <div class="option main"><h3>Всё помещение, 103 м²</h3><p>Основной вариант. Зал, пять кабинетов, коридор, два санузла, два входа с улицы. Приоритет у арендатора, который берёт всё помещение на долгий срок.</p></div>
+        <div class="option"><h3>Если нужна часть: 63 м²</h3><p>Свободна уже сейчас. Четыре кабинета с окнами, коридор, санузел. Вход через пристройку: она не отапливается и в 103 м² не входит, подходит под тамбур или витрину.</p></div>
+        <div class="option"><h3>Если нужна часть: 40 м²</h3><p>Зал с окном на улицу, кабинет около 15 м², санузел, крыльцо со ступенями.</p></div>
         <p class="src" style="margin-top:0">Схема составлена по эскизу собственника, площади комнат приблизительные. Точные цифры есть в техпаспорте.</p>
       </div>
     </div>
@@ -495,12 +499,12 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
         <ul>
           <li>Долгосрочный договор</li>
           <li>Без комиссии, сдаёт собственник</li>
-          <li>Отдельные блоки: цена по запросу</li>
+          <li>Часть помещения: цена по запросу</li>
         </ul>
       </div>
       <ol class="steps">
         <li><h3>Вопросы и заявка</h3><p>Бот в Telegram отвечает на вопросы, присылает расчёт по вашей нише и передаёт заявку собственнику.</p></li>
-        <li><h3>Показ</h3><p>Согласуем удобное время и покажем оба блока и пристройку.</p></li>
+        <li><h3>Показ</h3><p>Согласуем удобное время и покажем всё помещение и пристройку.</p></li>
         <li><h3>Условия</h3><p>Срок и детали договора согласуем напрямую с собственником после показа.</p></li>
         <li><h3>Договор</h3><p>Подписываем договор аренды и передаём помещение по акту.</p></li>
       </ol>
@@ -515,8 +519,8 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
       <h2>Коротко о главном</h2>
     </div>
     <div class="faq">
-      <details open><summary>Когда помещение свободно?</summary><p>Блок 63 м² свободен. Блок 40 м² сейчас занят арендатором; срок передачи всех 103 м² согласуем, ориентир один-два месяца.</p></details>
-      <details><summary>Можно ли арендовать только часть?</summary><p>Да. У блоков отдельные входы и санузлы, их можно сдать по отдельности. Приоритет у арендатора на всё помещение.</p></details>
+      <details open><summary>Когда помещение свободно?</summary><p>Часть 63 м² свободна уже сейчас. В части 40 м² пока работает салон; срок передачи всех 103 м² согласуем, ориентир один-два месяца.</p></details>
+      <details><summary>Можно ли арендовать только часть?</summary><p>Помещение единое, и приоритет у арендатора на все 103 м². Если вам нужна меньшая площадь, часть можно отделить: у каждой свой вход и санузел.</p></details>
       <details><summary>Есть ли комиссия?</summary><p>Нет. Помещение сдаёт собственник, договор заключается напрямую.</p></details>
       <details><summary>Можно ли разместить вывеску?</summary><p>Да, на фасаде над окнами есть место под вывеску.</p></details>
       <details><summary>Что с фотографиями и техническими данными?</summary><p>Фото и видеообзор помещения, высоту потолков и электрическую мощность пришлём по запросу.</p></details>
