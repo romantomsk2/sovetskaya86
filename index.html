@@ -102,6 +102,14 @@ section{padding:72px 0}
 .tbl .lo{color:var(--free-line);font-weight:700}
 .tbl .hi{color:var(--muted)}
 .tbl .grp td{background:#fbfaf8;font-weight:600;font-size:13px;color:var(--muted);text-align:left}
+.pick{margin-top:26px;background:var(--card);border:1px solid var(--brick);border-radius:14px;padding:24px}
+.pick p{color:var(--muted);font-size:15px;margin:6px 0 16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips a{background:var(--brick);color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:9px 16px;border-radius:22px}
+.chips a:hover{background:var(--brick-dark)}
+.adv{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.adv article{border-top:3px solid var(--brick);padding-top:16px;display:flex;flex-direction:column;gap:8px}
+.adv p{font-size:15px;color:var(--muted)}
 .how{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
 .how p{font-size:15px;color:var(--muted)}
 .botband{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
@@ -176,6 +184,7 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
 
 @media (max-width:860px){
   .hero-grid,.plan-grid,.loc,.terms,.pano,.nums,.how,.botband{grid-template-columns:1fr}
+  .adv{grid-template-columns:1fr 1fr}
   .pano .mark b{font-size:11px;padding:3px 6px}
   .why{grid-template-columns:1fr 1fr}
   .who{grid-template-columns:1fr}
@@ -432,7 +441,11 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
       <p><b>Как читать последний столбец.</b> Это число точек на жителя в радиусе 500 м, делённое на то же число по городу. Меньше единицы: точек на жителя меньше, чем в среднем по Томску. Больше единицы: район обслуживает ещё и приезжий поток, прежде всего студентов ТПУ и пациентов больниц.</p>
       <p><b>Откуда данные.</b> Конкуренты: филиалы из справочника 2ГИС в радиусе по прямой, ноябрь 2026 года; знак «+» значит «не меньше». Жители: оценка по этажности и площади жилых домов на карте OpenStreetMap из расчёта 25 м² на человека. Среднее по городу посчитано на 650 тысяч жителей Томска с пригородами. Это оценка окружения, а не прогноз выручки.</p>
     </div>
-    <div class="cta"><a class="btn btn-main" href="https://t.me/sovetskaya_86_bot?start=numbers">Получить расчёт по своей нише в Telegram</a></div>
+    <div class="pick">
+      <h3>Выберите свой вид бизнеса</h3>
+      <p>Бот в Telegram сразу пришлёт расчёт именно по нему: конкуренты с названиями и расстояниями, жители, точки притяжения. Регистрация не нужна.</p>
+      <div class="chips"><a href="https://t.me/sovetskaya_86_bot?start=n_sup">Супермаркет</a><a href="https://t.me/sovetskaya_86_bot?start=n_alc">Алкомаркет</a><a href="https://t.me/sovetskaya_86_bot?start=n_apt">Аптека</a><a href="https://t.me/sovetskaya_86_bot?start=n_opt">Оптика</a><a href="https://t.me/sovetskaya_86_bot?start=n_den">Стоматология</a><a href="https://t.me/sovetskaya_86_bot?start=n_lab">Анализы</a><a href="https://t.me/sovetskaya_86_bot?start=n_cos">Косметология</a><a href="https://t.me/sovetskaya_86_bot?start=n_zoo">Зоотовары</a><a href="https://t.me/sovetskaya_86_bot?start=n_vet">Ветклиника</a><a href="https://t.me/sovetskaya_86_bot?start=n_bak">Пекарня</a><a href="https://t.me/sovetskaya_86_bot?start=n_cof">Кофейня</a><a href="https://t.me/sovetskaya_86_bot?start=n_kid">Детский центр</a><a href="https://t.me/sovetskaya_86_bot?start=n_sal">Салон красоты</a><a href="https://t.me/sovetskaya_86_bot?start=n_bar">Барбершоп</a><a href="https://t.me/sovetskaya_86_bot?start=n_mas">Массаж</a><a href="https://t.me/sovetskaya_86_bot?start=n_fit">Фитнес</a><a href="https://t.me/sovetskaya_86_bot?start=n_pvz">Пункт выдачи</a><a href="https://t.me/sovetskaya_86_bot?start=n_cop">Копицентр</a><a href="https://t.me/sovetskaya_86_bot?start=n_flw">Цветы</a></div>
+    </div>
   </div>
 </section>
 
@@ -457,6 +470,21 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
         <p class="a">Оставьте номер кнопкой ниже, собственник свяжется и согласует время показа.</p>
         <small>Пример диалога. Цифры из справочника 2ГИС, ноябрь 2026 года.</small>
       </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Коротко</div>
+      <h2>Четыре причины посмотреть это помещение</h2>
+    </div>
+    <div class="adv">
+      <article><h3>Место с потоком</h3><p>Центр Кировского района: 11 тысяч жителей в пяти минутах пешком, школа, больница и корпуса ТПУ рядом.</p></article>
+      <article><h3>Напрямую от собственника</h3><p>Без агентов и комиссии. Все вопросы решает один человек.</p></article>
+      <article><h3>Расчёт локации под ваш бизнес</h3><p>Конкуренты, жители и точки притяжения уже посчитаны по 19 видам бизнеса. Расчёт под вашу компанию пришлём бесплатно.</p></article>
+      <article><h3>Помощь с цифровой частью</h3><p>Арендатору поможем с запуском на новом адресе: страница точки, бот для записи клиентов, карточки на картах, соцсети. Объём обсудим при встрече.</p></article>
     </div>
   </div>
 </section>
