@@ -49,6 +49,8 @@ p{margin:0}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .facade{background:var(--ink-2);border-radius:16px;padding:18px}
 .facade text{font-family:var(--body)}
+.facade{margin:0}
+.facade figcaption{font-size:13px;color:#9aa3a9;margin-top:10px}
 .facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border-top:1px solid #333c42}
 .facts div{padding:22px 18px 26px;border-right:1px solid #333c42}
 .facts div:last-child{border-right:0}
@@ -71,6 +73,43 @@ section{padding:72px 0}
 .pano figcaption{padding:14px 18px;font-size:15px}
 .pano figcaption b{display:block;font-family:var(--display);font-weight:500;font-size:15px;margin-bottom:2px}
 .pano figcaption span{color:var(--muted)}
+
+.pano .view{position:relative;aspect-ratio:3/2;background:#e9e7e1}
+.pano .view iframe{position:absolute;inset:0;width:100%;height:100%}
+.pano .mark{position:absolute;inset:0;border:0;padding:0;margin:0;background:transparent;cursor:pointer;font:inherit;text-align:left}
+.pano .mark i{position:absolute;border:3px solid #ffd23f;border-radius:6px;box-shadow:0 0 0 2px rgba(0,0,0,.45),inset 0 0 0 1px rgba(0,0,0,.35);background:rgba(255,210,63,.14)}
+.pano .mark i.other{border:3px dashed #e8edf0;background:rgba(20,24,27,.45)}
+.pano .mark b{position:absolute;transform:translate(-50%,0);background:#ffd23f;color:#14181b;font-family:var(--body);font-weight:700;font-size:13px;line-height:1.25;padding:4px 9px;border-radius:6px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+.pano .mark b.other{background:#14181b;color:#fff}
+.pano .mark span{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);background:rgba(20,24,27,.88);color:#fff;font-size:13px;font-weight:600;padding:7px 14px;border-radius:20px;white-space:nowrap}
+.pano .view.live .mark{display:none}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:22px}
+.nums div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.nums b{display:block;font-family:var(--display);font-size:clamp(24px,3.4vw,34px);color:var(--brick);line-height:1.1;font-variant-numeric:tabular-nums}
+.nums span{color:var(--muted);font-size:15px}
+.anchors{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;padding:0;list-style:none}
+.anchors li{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:14px}
+.anchors li b{font-variant-numeric:tabular-nums}
+.tbl{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow-x:auto}
+.tbl table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;font-variant-numeric:tabular-nums}
+.tbl th,.tbl td{padding:11px 14px;text-align:right;border-bottom:1px solid var(--line)}
+.tbl th:first-child,.tbl td:first-child{text-align:left}
+.tbl th{font-size:13px;font-weight:600;color:var(--muted);background:#fbfaf8}
+.tbl tr:last-child td{border-bottom:0}
+.tbl .lo{color:var(--free-line);font-weight:700}
+.tbl .hi{color:var(--muted)}
+.tbl .grp td{background:#fbfaf8;font-weight:600;font-size:13px;color:var(--muted);text-align:left}
+.how{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.how p{font-size:15px;color:var(--muted)}
+.botband{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.botband ul{margin:18px 0 26px;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.botband li{padding-left:24px;position:relative;color:#d5dade}
+.botband li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:2px;background:#e58e78}
+.chat{background:var(--ink-2);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;font-size:15px}
+.chat p{max-width:86%;padding:10px 14px;border-radius:14px;line-height:1.45}
+.chat .q{align-self:flex-end;background:#b8442c;color:#fff;border-bottom-right-radius:4px}
+.chat .a{background:#333c42;color:#e9edf0;border-bottom-left-radius:4px}
+.chat small{color:#7f888e;font-size:12px}
 .plan-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:start}
 .plan{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;overflow-x:auto}
 .plan svg{display:block;min-width:560px;width:100%;height:auto}
@@ -130,7 +169,8 @@ details p{padding:0 0 18px;color:var(--muted)}
 footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
 
 @media (max-width:860px){
-  .hero-grid,.plan-grid,.loc,.terms,.pano{grid-template-columns:1fr}
+  .hero-grid,.plan-grid,.loc,.terms,.pano,.nums,.how,.botband{grid-template-columns:1fr}
+  .pano .mark b{font-size:11px;padding:3px 6px}
   .why{grid-template-columns:1fr 1fr}
   .who{grid-template-columns:1fr}
   .facts{grid-template-columns:1fr 1fr}
@@ -163,32 +203,41 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
           <a class="btn btn-ghost" href="#plan">Смотреть планировку</a>
         </div>
       </div>
-      <div class="facade" aria-hidden="true">
-        <svg viewBox="0 0 480 300" role="img">
-          <rect x="150" y="10" width="200" height="170" fill="#9c4a36"/>
-          <rect x="150" y="10" width="200" height="170" fill="none" stroke="#7b3524"/>
-          <g fill="#d9e3ea">
-            <rect x="170" y="26" width="34" height="26"/><rect x="233" y="26" width="34" height="26"/><rect x="296" y="26" width="34" height="26"/>
-            <rect x="170" y="70" width="34" height="26"/><rect x="233" y="70" width="34" height="26"/><rect x="296" y="70" width="34" height="26"/>
-            <rect x="170" y="114" width="34" height="26"/><rect x="233" y="114" width="34" height="26"/><rect x="296" y="114" width="34" height="26"/>
+      <figure class="facade">
+        <svg viewBox="0 0 480 300" role="img" aria-label="Схема фасада со стороны улицы Пирогова: слева пристройка со входом 2, три окна кабинетов, крыльцо входа 1 и окно зала. Правая часть первого этажа занята соседней клиникой и в аренду не входит.">
+          <rect x="24" y="14" width="456" height="150" fill="#5d3327"/>
+          <g fill="#7f93a1">
+            <rect x="60" y="30" width="26" height="20"/><rect x="130" y="30" width="26" height="20"/><rect x="200" y="30" width="26" height="20"/><rect x="270" y="30" width="26" height="20"/><rect x="340" y="30" width="26" height="20"/><rect x="410" y="30" width="26" height="20"/>
+            <rect x="60" y="74" width="26" height="20"/><rect x="130" y="74" width="26" height="20"/><rect x="200" y="74" width="26" height="20"/><rect x="270" y="74" width="26" height="20"/><rect x="340" y="74" width="26" height="20"/><rect x="410" y="74" width="26" height="20"/>
+            <rect x="60" y="118" width="26" height="20"/><rect x="130" y="118" width="26" height="20"/><rect x="200" y="118" width="26" height="20"/><rect x="270" y="118" width="26" height="20"/><rect x="340" y="118" width="26" height="20"/><rect x="410" y="118" width="26" height="20"/>
           </g>
-          <rect x="30" y="180" width="420" height="78" fill="#ecebe6"/>
-          <rect x="30" y="180" width="420" height="16" fill="#3a4349"/>
-          <text x="240" y="192" text-anchor="middle" font-size="10" font-weight="600" fill="#ffffff" letter-spacing="2">ВАША ВЫВЕСКА</text>
-          <g fill="#bcd3e6" stroke="#6f7b84">
-            <rect x="52" y="208" width="44" height="34"/>
-            <rect x="182" y="208" width="40" height="34"/><rect x="238" y="208" width="40" height="34"/><rect x="294" y="208" width="62" height="34"/>
+          <text x="252" y="158" text-anchor="middle" font-size="10" fill="#c9a79d">жилые этажи</text>
+          <!-- соседи: клиника -->
+          <rect x="356" y="164" width="124" height="78" fill="#3a4349"/>
+          <g fill="#4d575e"><rect x="372" y="186" width="30" height="26"/><rect x="414" y="186" width="30" height="26"/><rect x="452" y="182" width="20" height="60"/></g>
+          <text x="418" y="232" text-anchor="middle" font-size="10" fill="#9aa3a9">клиника, соседи</text>
+          <!-- наше помещение -->
+          <rect x="64" y="164" width="292" height="78" fill="#b8442c"/>
+          <g fill="#dbe7f0" stroke="#7b3524">
+            <rect x="82" y="184" width="40" height="30"/><rect x="138" y="184" width="32" height="30"/><rect x="186" y="184" width="32" height="30"/>
+            <rect x="296" y="184" width="42" height="30"/>
           </g>
-          <rect x="122" y="204" width="30" height="54" fill="#5b3a2c"/>
-          <polygon points="100,258 160,258 160,246 116,246" fill="#8b8f8a"/>
-          <rect x="386" y="196" width="64" height="62" fill="#d6d4cd" stroke="#6f7b84"/>
-          <rect x="406" y="214" width="24" height="44" fill="#5b3a2c"/>
-          <rect x="0" y="258" width="480" height="6" fill="#4b545a"/>
-          <text x="137" y="284" text-anchor="middle" font-size="12" fill="#c3cace">Вход 1</text>
-          <text x="418" y="284" text-anchor="middle" font-size="12" fill="#c3cace">Вход 2</text>
-          <text x="268" y="284" text-anchor="middle" font-size="12" fill="#c3cace">окна на улицу Пирогова</text>
+          <rect x="244" y="180" width="26" height="54" fill="#3b241b"/>
+          <polygon points="232,242 282,242 282,234 240,234" fill="#b9bdb8"/>
+          <rect x="24" y="186" width="40" height="56" fill="#9a3a26" stroke="#7b3524"/>
+          <rect x="34" y="200" width="20" height="42" fill="#3b241b"/>
+          <rect x="0" y="242" width="480" height="5" fill="#4b545a"/>
+          <rect x="22" y="162" width="336" height="82" fill="none" stroke="#ffd9cf" stroke-width="2.5" stroke-dasharray="7 5" rx="3"/>
+          <text x="44" y="264" text-anchor="middle" font-size="11" fill="#ffffff" font-weight="600">Вход 2</text>
+          <text x="150" y="264" text-anchor="middle" font-size="11" fill="#c3cace">три окна кабинетов</text>
+          <text x="257" y="264" text-anchor="middle" font-size="11" fill="#ffffff" font-weight="600">Вход 1</text>
+          <text x="317" y="264" text-anchor="middle" font-size="11" fill="#c3cace">зал</text>
+          <path d="M22 276 H358" stroke="#e58e78" stroke-width="2"/><path d="M22 271 V281 M358 271 V281" stroke="#e58e78" stroke-width="2"/>
+          <text x="190" y="294" text-anchor="middle" font-size="12" fill="#e58e78" font-weight="600">сдаётся: 103 м², оба входа ваши</text>
+          <text x="418" y="264" text-anchor="middle" font-size="11" fill="#7f888e">не входит</text>
         </svg>
-      </div>
+        <figcaption>Схема фасада со стороны улицы Пирогова, не в масштабе. Слева въезд во двор, справа улица Советская.</figcaption>
+      </figure>
     </div>
     <div class="facts">
       <div><b>103 м²</b><span>по плану БТИ</span></div>
@@ -221,19 +270,34 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
     <div class="head">
       <div class="eyebrow">Как выглядит место</div>
       <h2>Осмотритесь, не выезжая на показ</h2>
-      <p>Панорамы улицы Пирогова из Яндекс Карт. Их можно вращать и приближать, как на карте.</p>
+      <p>На панорамах улицы Пирогова отмечено, что именно сдаётся и где проходит граница с соседями. После нажатия панораму можно вращать и приближать.</p>
     </div>
     <div class="pano">
       <figure>
-        <iframe title="Панорама: фасад блока 63 м² и второй вход" loading="lazy" allowfullscreen src="https://yandex.ru/map-widget/v1/?ll=84.954436%2C56.461500&z=18&panorama%5Bpoint%5D=84.954436%2C56.461520&panorama%5Bdirection%5D=180%2C5&panorama%5Bspan%5D=110%2C60"></iframe>
-        <figcaption><b>Блок 63 м² и вход 2</b><span>Три окна кабинетов на улицу, слева пристройка со вторым входом у въезда во двор.</span></figcaption>
+        <div class="view">
+          <iframe title="Панорама: фасад блока 63 м² и второй вход" loading="lazy" allowfullscreen src="https://yandex.ru/map-widget/v1/?ll=84.954436%2C56.461500&z=18&panorama%5Bpoint%5D=84.954436%2C56.461520&panorama%5Bdirection%5D=180%2C5&panorama%5Bspan%5D=110%2C60"></iframe>
+          <button class="mark" type="button" aria-label="Убрать разметку и вращать панораму">
+            <i style="left:26.5%;top:45%;width:7.5%;height:27%"></i><b style="left:22%;top:31%">Вход 2</b>
+            <i style="left:39%;top:42.5%;width:61%;height:23%"></i><b style="left:66%;top:68%">Окна кабинетов, блок 63 м²</b>
+            <span>Нажмите, чтобы вращать панораму</span>
+          </button>
+        </div>
+        <figcaption><b>Блок 63 м² и вход 2</b><span>Жёлтым обведено то, что сдаётся: окна кабинетов на первом этаже и пристройка со вторым входом у въезда во двор.</span></figcaption>
       </figure>
       <figure>
-        <iframe title="Панорама: фасад в сторону Советской и первый вход" loading="lazy" allowfullscreen src="https://yandex.ru/map-widget/v1/?ll=84.954380%2C56.461500&z=18&panorama%5Bpoint%5D=84.954436%2C56.461520&panorama%5Bdirection%5D=215%2C3&panorama%5Bspan%5D=110%2C60"></iframe>
-        <figcaption><b>Вход 1 и фасад к Советской</b><span>Крыльцо первого входа и линия фасада в сторону Советской улицы.</span></figcaption>
+        <div class="view">
+          <iframe title="Панорама: фасад в сторону Советской и первый вход" loading="lazy" allowfullscreen src="https://yandex.ru/map-widget/v1/?ll=84.954380%2C56.461500&z=18&panorama%5Bpoint%5D=84.954436%2C56.461520&panorama%5Bdirection%5D=215%2C3&panorama%5Bspan%5D=110%2C60"></iframe>
+          <button class="mark" type="button" aria-label="Убрать разметку и вращать панораму">
+            <i style="left:0;top:37%;width:49%;height:26%"></i><b style="left:22%;top:65%">Ваш фасад</b>
+            <b style="left:55%;top:27%">Вход 1, за кустами</b>
+            <i class="other" style="left:62.5%;top:38.5%;width:25%;height:16%"></i><b class="other" style="left:75%;top:56.5%">Клиника, не входит</b>
+            <span>Нажмите, чтобы вращать панораму</span>
+          </button>
+        </div>
+        <figcaption><b>Вход 1 и граница с соседями</b><span>Помещение заканчивается у крыльца первого входа. Белая одноэтажная часть правее относится к клинике.</span></figcaption>
       </figure>
     </div>
-    <p class="src">Съёмка Яндекс Карт, сезон и вывески на панораме могут отличаться от сегодняшних.</p>
+    <p class="src">Разметка нанесена поверх панорамы Яндекс Карт и показывает границы примерно. Сезон и вывески на съёмке могут отличаться от сегодняшних.</p>
   </div>
 </section>
 
@@ -265,7 +329,7 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
         <div class="legend"><span><i class="f"></i>Блок 63 м²</span><span><i class="b"></i>Блок 40 м²</span><span><i class="a"></i>Пристройка у входа 2</span><span><i class="w"></i>Окно</span></div>
       </div>
       <div class="options">
-        <div class="option main"><h3>Всё помещение, 103 м²</h3><p>Семь помещений: зал, пять кабинетов и коридор, два санузла, два входа. Лучшие условия получает арендатор, который берёт всё и надолго.</p></div>
+        <div class="option main"><h3>Всё помещение, 103 м²</h3><p>Семь помещений: зал, пять кабинетов и коридор, два санузла, два входа. Приоритет у арендатора, который берёт всё помещение на долгий срок.</p></div>
         <div class="option"><h3>Блок 63 м²</h3><p>Четыре кабинета с окнами, коридор, санузел. Вход через пристройку: она не отапливается и в 103 м² не входит, подходит под тамбур или витрину.</p></div>
         <div class="option"><h3>Блок 40 м²</h3><p>Зал с окном на улицу, кабинет около 15 м², санузел, крыльцо со ступенями.</p></div>
         <p class="src" style="margin-top:0">Схема составлена по эскизу собственника, площади комнат приблизительные. Точные цифры есть в техпаспорте.</p>
@@ -286,6 +350,86 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
       <article><h3>Аптека и оптика</h3><p>Соседство с диагностическим центром даёт готовый поток: рецепт и направление выписывают за стеной.</p></article>
       <article><h3>Магазин у дома, пекарня, зоотовары</h3><p>Продуктовый магазин работал здесь много лет. Вокруг плотная жилая застройка, вход прямо с тротуара.</p></article>
       <article><h3>Услуги и офис с приёмом</h3><p>Копицентр, детский центр, студия, офис продаж. Два входа позволяют развести клиентов и персонал.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="numbers" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Цифры локации</div>
+      <h2>Расчёт окружения по 19 видам бизнеса уже готов</h2>
+      <p>Перед открытием точки считают жителей в пешей доступности, точки притяжения и конкурентов. Для этого адреса расчёт сделан заранее, вам остаётся сверить его со своей моделью.</p>
+    </div>
+    <div class="nums">
+      <div><b>≈ 4 тыс.</b><span>жителей в радиусе 300 м, три-четыре минуты пешком</span></div>
+      <div><b>≈ 11 тыс.</b><span>жителей в радиусе 500 м, с общежитиями</span></div>
+      <div><b>≈ 38 тыс.</b><span>жителей в радиусе 1 км</span></div>
+    </div>
+    <ul class="anchors">
+      <li>Школа № 32 · <b>140 м</b></li>
+      <li>Три детских сада · <b>230–360 м</b></li>
+      <li>Горбольница № 3 · <b>270 м</b></li>
+      <li>Женская консультация · <b>290 м</b></li>
+      <li>Корпуса ТПУ · <b>430 м</b></li>
+      <li>Остановки «ТЭМЗ», «Учебная», «Советская» · <b>250–300 м</b></li>
+      <li>Трамвай «Политехнический университет» · <b>560 м</b></li>
+    </ul>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Вид бизнеса</th><th>Точек в 300 м</th><th>в 500 м</th><th>в 1 км</th><th>Плотность к среднему по Томску</th></tr></thead>
+        <tbody>
+            <tr><td>Супермаркет, магазин у дома</td><td>2</td><td>6</td><td>25</td><td class="lo">×0,6</td></tr>
+            <tr><td>Зоотовары</td><td>1</td><td>2</td><td>8</td><td class="lo">×0,7</td></tr>
+            <tr><td>Алкомаркет</td><td>1</td><td>9</td><td>30</td><td class="lo">×0,8</td></tr>
+            <tr><td>Аптека</td><td>4</td><td>7</td><td>27</td><td class="lo">×0,8</td></tr>
+            <tr><td>Пункт выдачи заказов</td><td>5</td><td>16</td><td>57</td><td class="lo">×0,9</td></tr>
+            <tr><td>Ветеринарная клиника</td><td>0</td><td>1</td><td>2</td><td class="">×1,0</td></tr>
+            <tr><td>Детский развивающий центр</td><td>0</td><td>3</td><td>10</td><td class="">×1,0</td></tr>
+            <tr><td>Пекарня</td><td>1</td><td>3</td><td>9</td><td class="">×1,2</td></tr>
+            <tr><td>Салон красоты</td><td>9</td><td>38+</td><td>116+</td><td class="hi">×1,4</td></tr>
+            <tr><td>Цветы</td><td>1</td><td>10</td><td>20</td><td class="hi">×1,9</td></tr>
+            <tr><td>Копицентр, печать</td><td>3</td><td>8</td><td>24</td><td class="hi">×2,2</td></tr>
+            <tr><td>Массаж</td><td>11</td><td>19+</td><td>44+</td><td class="hi">×2,2</td></tr>
+            <tr><td>Медицинские анализы</td><td>4</td><td>6</td><td>24</td><td class="hi">×2,4</td></tr>
+            <tr><td>Косметология</td><td>9</td><td>12</td><td>32</td><td class="hi">×2,5</td></tr>
+            <tr><td>Стоматология</td><td>6</td><td>10</td><td>21</td><td class="hi">×2,7</td></tr>
+            <tr><td>Оптика</td><td>1</td><td>7</td><td>19</td><td class="hi">×3,5</td></tr>
+            <tr><td>Барбершоп</td><td>2</td><td>4</td><td>12</td><td class="hi">×3,9</td></tr>
+            <tr><td>Фитнес-студия</td><td>1</td><td>10</td><td>22</td><td class="hi">×4,2</td></tr>
+            <tr><td>Кофейня</td><td>2</td><td>8</td><td>16</td><td class="hi">×5,1</td></tr>
+            </tbody>
+      </table>
+    </div>
+    <div class="how">
+      <p><b>Как читать последний столбец.</b> Это число точек на жителя в радиусе 500 м, делённое на то же число по городу. Меньше единицы: точек на жителя меньше, чем в среднем по Томску. Больше единицы: район обслуживает ещё и приезжий поток, прежде всего студентов ТПУ и пациентов больниц.</p>
+      <p><b>Откуда данные.</b> Конкуренты: филиалы из справочника 2ГИС в радиусе по прямой, ноябрь 2026 года; знак «+» значит «не меньше». Жители: оценка по этажности и площади жилых домов на карте OpenStreetMap из расчёта 25 м² на человека. Среднее по городу посчитано на 650 тысяч жителей Томска с пригородами. Это оценка окружения, а не прогноз выручки.</p>
+    </div>
+    <div class="cta"><a class="btn btn-main" href="https://t.me/sovetskaya_86_bot?start=numbers">Получить расчёт по своей нише в Telegram</a></div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="botband">
+      <div>
+        <div class="eyebrow" style="color:#e58e78">Бот в Telegram</div>
+        <h2 style="margin-top:12px">Ответ за минуту, в любое время</h2>
+        <ul>
+          <li>Отвечает на вопросы о помещении своими словами, а не шаблонами: площадь, планировка, входы, сроки, цена.</li>
+          <li>Присылает цифры по вашему виду бизнеса: конкуренты рядом с названиями и расстояниями, жители, точки притяжения.</li>
+          <li>Записывает на показ и передаёт собственнику то, на что сам ответить не может.</li>
+          <li>Это ИИ-помощник. Условия договора он не согласует, это делает собственник.</li>
+        </ul>
+        <a class="btn btn-main" href="https://t.me/sovetskaya_86_bot">Открыть бота</a>
+      </div>
+      <div class="chat" aria-label="Пример диалога с ботом">
+        <p class="q">Думаем про зоомагазин. Кто рядом?</p>
+        <p class="a">В 500 м две точки: «Русский полоз» в 155 м (террариумы и аквариумы) и «Планета Зоо» в 375 м. В радиусе 1 км всего восемь. Ветклиника в 500 м одна, «Три кота» в 310 м.</p>
+        <p class="q">Когда можно посмотреть?</p>
+        <p class="a">Оставьте номер кнопкой ниже, собственник свяжется и согласует время показа.</p>
+        <small>Пример диалога. Цифры из справочника 2ГИС, ноябрь 2026 года.</small>
+      </div>
     </div>
   </div>
 </section>
@@ -328,14 +472,13 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
         <ul>
           <li>Долгосрочный договор</li>
           <li>Без комиссии, сдаёт собственник</li>
-          <li>Каникулы на время ремонта обсуждаются</li>
           <li>Отдельные блоки: цена по запросу</li>
         </ul>
       </div>
       <ol class="steps">
-        <li><h3>Вопросы и заявка</h3><p>Бот в Telegram отвечает на типовые вопросы и передаёт вашу заявку собственнику.</p></li>
+        <li><h3>Вопросы и заявка</h3><p>Бот в Telegram отвечает на вопросы, присылает расчёт по вашей нише и передаёт заявку собственнику.</p></li>
         <li><h3>Показ</h3><p>Согласуем удобное время и покажем оба блока и пристройку.</p></li>
-        <li><h3>Условия</h3><p>Срок, каникулы на ремонт и вывеску обсуждаем напрямую с собственником.</p></li>
+        <li><h3>Условия</h3><p>Срок и детали договора согласуем напрямую с собственником после показа.</p></li>
         <li><h3>Договор</h3><p>Подписываем договор аренды и передаём помещение по акту.</p></li>
       </ol>
     </div>
@@ -369,5 +512,8 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
 </section>
 <footer><div class="wrap">Советская, 86, Томск. Аренда от собственника.</div></footer>
 
+<script>
+document.querySelectorAll(".pano .mark").forEach(function(b){b.addEventListener("click",function(){b.parentNode.classList.add("live")})});
+</script>
 </body>
 </html>
