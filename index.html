@@ -67,7 +67,10 @@ section{padding:72px 0}
 .why p{font-size:15px;color:var(--muted)}
 .src{font-size:13px;color:var(--muted);margin-top:14px}
 
-.pano{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pano{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pano .incl{background:var(--ink);color:#fff;border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:14px}
+.pano .incl ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px;color:#d5dade}
+.pano .incl p{color:#9aa3a9;font-size:14px}
 .pano figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .pano iframe{width:100%;height:340px;border:0;display:block;background:#e9e7e1}
 .pano figcaption{padding:14px 18px;font-size:15px}
@@ -288,7 +291,7 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
         <div class="view">
           <iframe title="Панорама: весь фасад помещения" loading="lazy" allowfullscreen src="https://yandex.ru/map-widget/v1/?ll=84.954436%2C56.461520&z=18&panorama%5Bpoint%5D=84.954436%2C56.461520&panorama%5Bdirection%5D=215%2C3&panorama%5Bspan%5D=110%2C60"></iframe>
           <button class="mark" type="button" aria-label="Убрать разметку и вращать панораму">
-            <i style="left:0;top:37%;width:38%;height:26%"></i><b style="left:19%;top:65%">Блок 63 м²: кабинеты</b>
+            <i style="left:0;top:37%;width:38%;height:26%"></i><b style="left:1%;top:65%;transform:none">Блок 63 м²: кабинеты</b>
             <i style="left:40%;top:37%;width:22%;height:26%"></i><b style="left:51%;top:25%">Блок 40 м²: зал и вход 1</b>
             <i class="other" style="left:63.5%;top:38.5%;width:24%;height:16%"></i><b class="other" style="left:76%;top:57%">Клиника</b>
             <span>Нажмите, чтобы вращать</span>
@@ -307,6 +310,15 @@ footer{background:var(--ink);color:#7f888e;font-size:13px;padding:0 0 28px}
         </div>
         <figcaption><b>3. Вход 1 со стороны Советской</b><span>Правый край помещения: крыльцо со ступенями и окно зала. Так помещение видят те, кто идёт от Советской улицы.</span></figcaption>
       </figure>
+      <div class="incl">
+        <h3>Что входит в 103 м², если идти вдоль фасада</h3>
+        <ol>
+          <li>Пристройка со вторым входом у въезда во двор.</li>
+          <li>Три окна кабинетов на улицу и ещё одно окно в торце.</li>
+          <li>Окно зала и крыльцо первого входа.</li>
+        </ol>
+        <p>На этом помещение заканчивается. Белая одноэтажная часть дальше, в сторону Советской, принадлежит клинике.</p>
+      </div>
     </div>
     <p class="src">Разметка нанесена поверх панорамы Яндекс Карт и показывает границы примерно. Сезон и вывески на съёмке могут отличаться от сегодняшних.</p>
   </div>
